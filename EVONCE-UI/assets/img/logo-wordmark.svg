@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="36" viewBox="0 0 260 36">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop stop-color="#0f0f0f"/>
+      <stop offset="1" stop-color="#0f0f0f"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="26" font-family="Cormorant Garamond, serif" font-weight="600" font-size="28" letter-spacing="8" fill="url(#g)">EVONCE</text>
+</svg>

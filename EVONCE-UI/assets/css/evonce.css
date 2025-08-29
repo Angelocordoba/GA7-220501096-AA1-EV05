@@ -1,0 +1,130 @@
+/* EVONCE — Lujo minimalista */
+
+:root{
+  --bg: #faf9f6;
+  --ink: #0f0f0f;
+  --muted: #6b6b6b;
+  --gold: #c8a24a;
+  --line: rgba(0,0,0,.10);
+  --radius: 18px;
+  --space: clamp(56px, 8vw, 120px);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height:1.6;
+  text-rendering: optimizeLegibility;
+}
+
+.container{max-width:1120px; margin:0 auto; padding:0 20px}
+.ls{letter-spacing:.35em; text-transform:uppercase}
+
+.site-header{
+  position:sticky; top:0; z-index:40; background:rgba(250,249,246,.85);
+  backdrop-filter: blur(8px); border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex; align-items:center; gap:20px; padding:14px 0;
+}
+.wordmark{height:28px}
+.nav{margin-left:auto; display:flex; gap:26px; align-items:center}
+.nav a{color:var(--ink); text-decoration:none; font-weight:500}
+.nav a:hover{border-bottom:1px solid var(--ink)}
+.btn-ghost{padding:8px 14px; border:1px solid var(--ink); border-radius:999px}
+.burger{display:none; margin-left:auto; background:transparent; border:1px solid var(--ink); border-radius:10px; padding:6px 10px}
+
+.hero{
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  padding: calc(var(--space) * .9) 0;
+}
+.eyebrow{
+  color: var(--muted); letter-spacing:.35em; text-transform:uppercase; font-size:12px; margin:0 0 14px 0;
+}
+.display{
+  font-family: "Cormorant Garamond", serif;
+  font-weight:600;
+  font-size: clamp(40px, 9vw, 96px);
+  line-height:1.02;
+  margin:0;
+  letter-spacing:.02em;
+}
+.display .sub{
+  font-size: clamp(20px, 2.8vw, 32px);
+  font-weight:500;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+}
+.display .sep{color: var(--gold)}
+
+.lede{font-size: clamp(16px, 1.4vw, 20px); color:#2e2e2e; margin-top:16px}
+
+.block{padding: var(--space) 0; border-bottom:1px solid var(--line)}
+.centered{text-align:center}
+.kicker{letter-spacing:.45em; text-transform:uppercase; color:var(--muted); margin:0 0 18px}
+.btn{display:inline-block; text-decoration:none; color:var(--ink); border:1px solid var(--ink); padding:12px 18px; border-radius:999px}
+.btn:hover{background:var(--ink); color:#fff}
+
+.grid{display:grid; gap:18px}
+.gallery{grid-template-columns: 1.2fr 1fr 1fr}
+.gallery .ph{background: linear-gradient(135deg, #eee, #ddd); border-radius: var(--radius); position:relative; min-height: 260px}
+.gallery .ph.tall{grid-row: span 2; min-height: 540px}
+.gallery .ph.wide{grid-column: span 2}
+.gallery figcaption{position:absolute; left:14px; bottom:12px; font-size:12px; letter-spacing:.25em; text-transform:uppercase; color:#333; background:rgba(255,255,255,.7); padding:4px 8px; border-radius:999px}
+
+.two-col{display:grid; grid-template-columns: .9fr 1.1fr; gap:40px; align-items:start}
+.section-title{font-family: "Cormorant Garamond", serif; font-weight:600; font-size: clamp(22px, 2.6vw, 28px); margin:0}
+.copy p{margin:0 0 14px 0}
+.copy .lede{margin-top:8px}
+
+.catalogo{grid-template-columns: repeat(4, 1fr)}
+.tile{
+  text-decoration:none; color:inherit; border:1px solid var(--ink);
+  border-radius: var(--radius); min-height: 180px; position:relative; overflow:hidden;
+  background:
+    radial-gradient(160px 80px at 20% 0%, rgba(200,162,74,.12), transparent 70%),
+    linear-gradient(180deg, #fff, #f7f5ef);
+}
+.tile::after{
+  content:""; position:absolute; inset:0; border-radius:inherit;
+  box-shadow: inset 0 0 0 1px rgba(200,162,74,.35);
+  pointer-events:none;
+}
+.tile-body{position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:18px}
+.tile .over{letter-spacing:.35em; text-transform:uppercase; font-size:12px; color:#383838; margin:0 0 4px}
+.tile h3{font-family: "Cormorant Garamond", serif; font-weight:600; margin:0; font-size:22px}
+
+.contact{display:grid; grid-template-columns:1fr 1fr; gap:24px}
+.link{color:var(--ink); text-underline-offset:3px}
+.link:hover{text-decoration:underline 1px}
+
+.site-footer{padding:18px 0}
+.footer-inner{display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); padding-top:18px}
+.top{text-decoration:none; color:var(--ink)}
+
+@media (max-width: 1000px){
+  .two-col{grid-template-columns:1fr}
+  .catalogo{grid-template-columns: repeat(2, 1fr)}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery .ph.tall{grid-row:auto; min-height:300px}
+  .gallery .ph.wide{grid-column:auto}
+}
+@media (max-width: 720px){
+  .nav{display:none}
+  .burger{display:inline-block}
+  .catalogo{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+}
+
+
+.ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* recorta manteniendo proporción */
+  display: block;
+}
