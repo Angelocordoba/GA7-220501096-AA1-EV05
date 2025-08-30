@@ -5,7 +5,7 @@ burger?.addEventListener('click', ()=>{
   nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
   nav.style.flexDirection = 'column';
   nav.style.gap = '14px';
-  nav.style.background = 'rgba(250,249,246,.95)';
+  nav.style.background = 'rgba(243, 232, 197, 0.95)';
   nav.style.position = 'absolute';
   nav.style.right = '20px';
   nav.style.top = '54px';
